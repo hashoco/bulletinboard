@@ -1,0 +1,71 @@
+.modal.modal-center {
+	text-align: center;
+  }
+ .form-control{
+	background-color: red;
+ } 
+  @media screen and (min-width: 768px) { 
+	.modal.modal-center:before {
+	  display: inline-block;
+	  vertical-align: middle;
+	  content: " ";
+	  height: 100%;
+	}
+  }
+  
+  .modal-dialog.modal-center {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle; 
+  }
+
+/*반응형 테이블*/
+@media only screen and (max-width: 800px) {
+    
+    /* Force table to not be like tables anymore */
+	#custom-responsive-table table, 
+	#custom-responsive-table thead, 
+	#custom-responsive-table tbody, 
+	#custom-responsive-table th, 
+	#custom-responsive-table td, 
+	#custom-responsive-table tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#custom-responsive-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#custom-responsive-table tr { border: 1px solid #ccc; }
+ 
+	#custom-responsive-table td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 20%; /*컬럼위치조정*/
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#custom-responsive-table td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	#custom-responsive-table td:before { content: attr(data-title); }
+}
